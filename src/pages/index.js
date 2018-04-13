@@ -1,11 +1,38 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-const IndexPage = () => (
-  <div>
-    <h1>Hi people</h1>
-    <Link to="/p/page-2/">Go to page 2</Link>
-  </div>
-)
+export default class IndexPage extends React.Component {
 
-export default IndexPage
+  constructor(props) {
+    super(props)
+    this.state = {
+      projects: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('https://api.github.com/users/asaladino/repos')
+      .then(response => {
+        response.json().then(projects => {
+          this.setState({
+            projects: projects
+          })
+        })
+      })
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Projects</h1>
+        <ul>
+          {this.state.projects.map(project => {
+            return (
+              <li><a href={project.html_url}>{project.name}</a></li>
+            )
+          })}
+        </ul>
+      </div>
+    )
+  }
+}
