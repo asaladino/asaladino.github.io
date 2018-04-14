@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-export default class IndexPage extends React.Component {
+class ProjectIndexPage extends React.Component {
 
   constructor(props) {
     super(props)
@@ -36,3 +36,5 @@ export default class IndexPage extends React.Component {
     )
   }
 }
+
+export default ProjectIndexPage
