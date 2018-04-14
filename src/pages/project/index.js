@@ -6,7 +6,7 @@ class ProjectIndexPage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      projects: []
+      projects: [],
     }
   }
 
@@ -24,14 +24,16 @@ class ProjectIndexPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Projects</h1>
-        <ul>
-          {this.state.projects.map(project => {
-            return (
-              <li><a href={project.html_url}>{project.name}</a></li>
-            )
-          })}
-        </ul>
+        <div className={'column'}>
+          <h2>Projects</h2>
+          <ul>
+            {this.state.projects.map(project => {
+              return (
+                <li><a href={project.html_url}>{project.name}</a></li>
+              )
+            })}
+          </ul>
+        </div>
       </div>
     )
   }
