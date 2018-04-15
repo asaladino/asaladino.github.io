@@ -3,27 +3,18 @@ import Link from 'gatsby-link'
 
 class IndexPage extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      projects: [],
-    }
-  }
-
   render() {
     return (
       <div>
         <div className={'column'}>
           <div style={{ clear: 'both' }}/>
-          <h1>Oscar Wilde</h1>
-          <div>
-            <blockquote>
-              <p>
-                Be yourself; everyone else is already taken.
-              </p>
-            </blockquote>
-          </div>
-          <p>Posted April 14, 2018</p>
+          {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
+            return (<div key={node.id}>
+              <h1>{node.frontmatter.title}</h1>
+                <div dangerouslySetInnerHTML={{ __html: node.html }} />
+              <p>Posted {node.frontmatter.date}</p>
+            </div>)
+          })}
         </div>
       </div>
     )
@@ -31,3 +22,22 @@ class IndexPage extends React.Component {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query IndexQuery {
+    allMarkdownRemark {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          excerpt
+          html
+        }
+      }
+    }
+  }
+`
