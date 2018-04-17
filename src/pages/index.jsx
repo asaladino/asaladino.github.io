@@ -1,14 +1,17 @@
 import React from 'react'
-import Link from 'gatsby-link'
 
 class IndexPage extends React.Component {
 
   render() {
+    let posts = [];
+    if (this.props.hasOwnProperty('data')) {
+      posts = this.props.data.allMarkdownRemark.edges;
+    }
     return (
       <div>
         <div className={'column'}>
           <div style={{ clear: 'both' }}/>
-          {this.props.data.allMarkdownRemark.edges.map(({ node }) => {
+          {posts.map(({ node }) => {
             return (<div key={node.id}>
               <h1>{node.frontmatter.title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: node.html }} />

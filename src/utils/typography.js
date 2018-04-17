@@ -1,8 +1,8 @@
 
 import Typography from "typography";
-import kirkhamTheme from "typography-theme-bootstrap";
+import theme from "typography-theme-bootstrap";
 
-const typography = new Typography(kirkhamTheme);
+const typography = new Typography(theme);
 
 export default typography;
 
