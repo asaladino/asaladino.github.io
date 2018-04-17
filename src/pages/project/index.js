@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { FadeIn } from 'animate-components'
 
 class ProjectIndexPage extends React.Component {
 
@@ -15,7 +15,7 @@ class ProjectIndexPage extends React.Component {
       .then(response => {
         response.json().then(projects => {
           this.setState({
-            projects: projects
+            projects: projects,
           })
         })
       })
@@ -27,9 +27,13 @@ class ProjectIndexPage extends React.Component {
         <div className={'column'}>
           <h2>Projects</h2>
           <ul>
-            {this.state.projects.map(project => {
+            {this.state.projects.map((project, key) => {
               return (
-                <li><a href={project.html_url}>{project.name}</a></li>
+                <div key={key}>
+                  <FadeIn fillMode={'both'} style={{ opacity: 0 }} delay={(0.1 + (key / 10)) + 's'}>
+                    <li><a href={project.html_url}>{project.name}</a></li>
+                  </FadeIn>
+                </div>
               )
             })}
           </ul>
