@@ -1,5 +1,5 @@
 import React from 'react'
-import { FadeIn } from 'animate-components'
+import { FadeIn, FlipInX } from 'animate-components'
 
 class ProjectIndexPage extends React.Component {
 
@@ -30,9 +30,9 @@ class ProjectIndexPage extends React.Component {
             {this.state.projects.map((project, key) => {
               return (
                 <div key={key}>
-                  <FadeIn fillMode={'both'} style={{ opacity: 0 }} delay={(0.1 + (key / 10)) + 's'}>
+                  <FlipInX fillMode={'both'} delay={(0.1 + (key / 30)) + 's'}>
                     <li><a href={project.html_url}>{project.name}</a></li>
-                  </FadeIn>
+                  </FlipInX>
                 </div>
               )
             })}
