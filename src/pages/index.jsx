@@ -9,13 +9,13 @@ class IndexPage extends React.Component {
     }
     return (
       <div>
-        <div className={'column'}>
-          <div style={{ clear: 'both' }}/>
+        <div>
+          <div/>
           {posts.map(({ node }) => {
             return (<div key={node.id}>
-              <h1>{node.frontmatter.title}</h1>
+              <h2>{node.frontmatter.title}</h2>
                 <div dangerouslySetInnerHTML={{ __html: node.html }} />
-              <p>Posted {node.frontmatter.date}</p>
+              <small>Posted {node.frontmatter.date}</small>
             </div>)
           })}
         </div>

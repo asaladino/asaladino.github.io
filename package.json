@@ -6,16 +6,13 @@
   "repository": "https://github.com/asaladino/asaladino.github.io",
   "dependencies": {
     "animate-components": "^1.4.8",
+    "foundation-sites": "^6.4.4-rc1",
     "gatsby": "^1.9.251",
     "gatsby-link": "^1.6.40",
-    "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-typography": "^1.7.18",
     "gatsby-source-filesystem": "^1.5.29",
     "gatsby-transformer-remark": "^1.7.40",
     "prop-types": "latest",
-    "react-helmet": "^5.2.0",
-    "typography": "^0.16.6",
-    "typography-theme-bootstrap": "latest",
     "react": "latest"
   },
   "keywords": [
