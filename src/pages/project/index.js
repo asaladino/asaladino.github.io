@@ -23,19 +23,23 @@ class ProjectIndexPage extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Projects</h2>
-        <ul>
-          {this.state.projects.map((project, key) => {
-            return (
-              <div key={key}>
-                <FlipInX fillMode={'both'} delay={(0.1 + (key / 45)) + 's'}>
-                  <li><a href={project.html_url}>{project.name}</a></li>
-                </FlipInX>
-              </div>
-            )
-          })}
-        </ul>
+      <div className={'grid-container'}>
+        <div className={'grid-x'}>
+          <div className="cell">
+            <h2>Projects</h2>
+            <ul>
+              {this.state.projects.map((project, key) => {
+                return (
+                  <div key={key}>
+                    <FlipInX fillMode={'both'} delay={(0.1 + (key / 45)) + 's'}>
+                      <li><a href={project.html_url}>{project.name}</a></li>
+                    </FlipInX>
+                  </div>
+                )
+              })}
+            </ul>
+          </div>
+        </div>
       </div>
     )
   }
