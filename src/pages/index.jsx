@@ -1,23 +1,25 @@
 import React from 'react'
 
+
 class IndexPage extends React.Component {
 
   render() {
-    let posts = [];
+    let posts = []
     if (this.props.hasOwnProperty('data')) {
-      posts = this.props.data.allMarkdownRemark.edges;
+      posts = this.props.data.allMarkdownRemark.edges
     }
     return (
-      <div>
-        <div className={'column'}>
-          <div style={{ clear: 'both' }}/>
-          {posts.map(({ node }) => {
-            return (<div key={node.id}>
-              <h1>{node.frontmatter.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: node.html }} />
-              <p>Posted {node.frontmatter.date}</p>
-            </div>)
-          })}
+      <div className={'grid-container'}>
+        <div className={'grid-x'}>
+          <div className="cell">
+            {posts.map(({ node }) => {
+              return (<div key={node.id}>
+                <h2>{node.frontmatter.title}</h2>
+                <div dangerouslySetInnerHTML={{ __html: node.html }}/>
+                <small>Posted {node.frontmatter.date}</small>
+              </div>)
+            })}
+          </div>
         </div>
       </div>
     )
