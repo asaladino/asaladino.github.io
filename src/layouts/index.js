@@ -20,8 +20,10 @@ Layout.propTypes = {
   children: PropTypes.func,
 }
 
+// noinspection JSUnusedGlobalSymbols
 export default Layout
 
+// noinspection JSUnusedGlobalSymbols
 export const query = graphql`
   query SiteTitleQuery {
     site {

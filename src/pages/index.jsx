@@ -26,8 +26,10 @@ class IndexPage extends React.Component {
   }
 }
 
+// noinspection JSUnusedGlobalSymbols
 export default IndexPage
 
+// noinspection JSUnusedGlobalSymbols
 export const query = graphql`
   query IndexQuery {
     allMarkdownRemark {

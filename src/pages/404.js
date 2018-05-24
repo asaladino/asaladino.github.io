@@ -11,4 +11,5 @@ const NotFoundPage = () => (
   </div>
 )
 
+// noinspection JSUnusedGlobalSymbols
 export default NotFoundPage
