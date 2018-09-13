@@ -1,2 +1,0 @@
-webpackJsonp([0x81b8806e4260],{353:function(e,a){e.exports={data:{allMarkdownRemark:{totalCount:1,edges:[{node:{id:"/home/adam/Documents/programming/asaladino.github.io/src/pages/posts/2018/oscar-wilde-everyone-else.md absPath of file >>> MarkdownRemark",frontmatter:{title:"Oscar Wilde - Everyone Else",date:"14 April, 2018"},excerpt:"Be yourself; everyone else is already taken.",html:"<blockquote>\n<p>Be yourself; everyone else is already taken.</p>\n</blockquote>"}}]}},pathContext:{}}}});
-//# sourceMappingURL=path---index-90adfd870182ac881382.js.map
